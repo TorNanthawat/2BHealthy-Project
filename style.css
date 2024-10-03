@@ -1,0 +1,84 @@
+body {
+    font-family: 'Kanit', sans-serif;
+}
+
+.bmi-cal {
+    background: #263238;
+    padding: 40px 20px;
+    margin: 0 0 40px 0;
+}
+
+.bmi-480 {
+    width: 480px;
+    height: 100%;
+    margin: 0 auto;
+    color: white
+}
+
+.bmi-500 {
+    width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    color: white
+}
+
+.bmi-600 {
+    width: 800px;
+    height: 100%;
+    margin: 0 auto;
+    color: rgb(0, 0, 0)
+}
+
+.bmi-btn-black {
+    background-color: #546e7a;
+    color: white;
+    height: 50px;
+}
+
+.bmi-btn-black:hover {
+    color: white !important;
+    background: #78909c;
+ }
+
+.result-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2b3b43;
+    margin-bottom: 0;
+    border-radius: 10px;
+    margin-top: 15%;
+}
+
+.bmi-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+
+    p {
+        margin: 0;
+    }
+}
+
+.pic-bmi {
+    border-radius: 5px;
+}
+
+.nav-link {
+    color: #ffffff;
+}
+
+.nav-link:hover {
+    color: #78909c;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}

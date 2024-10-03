@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2BHealthy Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="Home"></div>
+    <div class="text-bg-dark sticky-top">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="#"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+                <span style="color: white;" class="fs-4">2BHealthy Project</span>
+            </a>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="#Home" class="nav-link">หน้าหลัก</a></li>
+                <li class="nav-item"><a href="#CalBMI" class="nav-link">คำนวณ BMI</a></li>
+                <li class="nav-item"><a href="#information" class="nav-link">ตารางเทียบค่า BMI</a></li>
+            </ul>
+        </header>
+    </div>
+    <!-- Header -->
+
+    <div class="px-4 py-2 my-5 text-center">
+        <img class="pic-bmi" width="480" height="320"
+            src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            alt="foodAndVeget">
+        <br><br>
+        <h1 class="display-5 fw-bold text-body-emphasis">เครื่องคำนวณหาค่าดัชนีมวลกาย (BMI)</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">การหาค่าดัชนีมวลกาย (Body Mass Index : BMI)
+                คือเป็นมาตรการที่ใช้ประเมินภาวะอ้วนและผอมในผู้ใหญ่ ตั้งแต่อายุ 20 ปีขึ้นไป
+                สามารถทำได้โดยการชั่งน้ำหนักตัวเป็นกิโลกรัม และวัดส่วนสูงเป็นเซนติเมตร แล้วนำมาหาดัชมีมวลกาย
+                โดยใช้โปรแกรมวัดค่าความอ้วนข้างต้น.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="#CalBMI" type="button" class="btn btn-dark btn-lg px-4 gap-3">เริ่มคำนวณ BMI</a>
+                <a href="#information" type="button" class="btn btn-outline-secondary btn-lg px-4">ดูตารางเทียบค่า BMI</a>
+            </div>
+        </div>
+    </div>
+    <br id="CalBMI"><br>
+    <!-- Content -->
+    <div class="col-100 col-100fw">
+        <div class="bmi-cal">
+            <div class="mb-3" align="center">
+                <h1 class="display-5" style="color: white;">คำนวณหาค่าดัชนีมวลกาย</h1>
+                <br>
+            </div>
+            <div class="bmi-480">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">น้ำหนักตัว (kg.)</label>
+                    <input type="number" class="form-control" id="InputKG">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">ส่วนสูง (cm.)</label>
+                    <input type="number" class="form-control" id="InputCM">
+                </div>
+                <div id="information" class="mb-3">
+                    <button type="button" style="width: 100%;" class="btn bmi-btn-black"
+                        onclick="calBMI()">คำนวณ</button>
+                </div>
+                <div class="result-container mb-3">
+                    <div class="bmi-result">
+                        <h1 id="bmi-result"></h1>
+                        <p id="bmi-result2"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content -->
+
+    <!-- table -->
+    <div class="container">
+        <div class="bmi-500">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">ค่าอยู่ในเกณฑ์</th>
+                        <th scope="col">ค่า BMI</th>
+                        <th scope="col">ภาวะเสี่ยงต่อโรค</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ผอมเกินไป</td>
+                        <td>น้อยกว่า 18.5</td>
+                        <td>เสี่ยงต่อการได้รับสารอาหารไม่เพียงพอ</td>
+                    </tr>
+                    <tr>
+                        <td>น้ำหนักปกติ เหมาะสม</td>
+                        <td>18.6 - 22.9</td>
+                        <td>มีความเสี่ยงต่อโรคต่าง ๆ น้อยที่สุด</td>
+                    </tr>
+                    <tr>
+                        <td>น้ำหนักเกิน</td>
+                        <td>23.0 - 24.9</td>
+                        <td>ถือว่ายังมีความเสี่ยงมากกว่าคนปกติ</td>
+                    </tr>
+                    <tr>
+                        <td>อ้วน</td>
+                        <td>25.0 - 29.9</td>
+                        <td>ยังมีความเสี่ยงต่อการเกิดโรค</td>
+                    </tr>
+                    <tr>
+                        <td>อ้วนมาก</td>
+                        <td>30.0 ขึ้นไป</td>
+                        <td>เสี่ยงต่อการเกิดโรค</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- table -->
+    <br>
+    <!-- Content 2 -->
+    <div class="container">
+        <div class="bmi-600">
+            <p>ค่า 30.0 ขึ้นไป : อ้วนมาก
+                เข้าเกณฑ์อ้วนมาก เสี่ยงต่อการเกิดโรคร้ายแรงที่แฝงมากับความอ้วน ต้องระวังการรับประทานอาหารประเภทไขมัน
+                และควรออกกำลังกายอย่างสม่ำเสมอ</p>
+            <p>ค่าระหว่าง 25.0 - 29.9 : อ้วน
+                อยู่ในเกณฑ์อ้วน ในระดับหนึ่ง ยังมีความเสี่ยงต่อการเกิดโรคที่มากับความอ้วน เช่นโรคเบาหวาน
+                และความดันโลหิตสูง</p>
+            <p>ค่าระหว่าง 23.0 - 24.9 : น้ำหนักเกิน
+                ไม่ถือว่าอ้วน แต่ควรพยายามลดน้ำหนักลงอีกสักนิด เพื่อให้เข้าสู่ค่ามาตรฐาน ค่า BMI ในกลุ่มนี้
+                ถือว่ามีความเสี่ยงเข้าข่ายความอ้วนอยู่บ้าง หากประวัติคนในครอบครัวเคยเป็นโรคเบาหวานและความดันโลหิตสูง
+                ก็ถือว่ายังมีความเสี่ยงมากกว่าคนปกติ</p>
+            <p>ค่าระหว่าง 18.6 - 22.9 : น้ำหนักปกติ เหมาะสม
+                เป็นเกณฑ์ที่มีน้ำหนัก เหมาะสมสำหรับคนไทยคือค่า BMI ระหว่าง 18.5-22.9 จัดอยู่ในเกณฑ์ปกติ
+                โอกาสการเกิดโรคที่มาจากจากความอ้วนน้อย ทำให้ค่าความเสี่ยงที่จะเกิดโรคต่างๆ น้อยตามลงไป
+                พยายามรักษาระดับค่า BMI ให้อยู่ในระดับนี้</p>
+            <p>ค่าน้อยกว่า 18.5 : ผอมเกินไป
+                เกณฑ์ถือว่ามีน้ำหนักที่น้อยเกินไป ไม่เป็นผลดีต่อสุขภาพสักเท่าไหร่ ยิ่งหากเป็นคนที่ส่วนสูงมากด้วยแล้ว
+                การมีน้ำหนักน้อยเกินไป อาจเสี่ยงต่อการได้รับสารอาหารไม่เพียงพอ ส่งผลให้ร่างกายอ่อนเพลียง่าย
+                ควรหันมาเน้นเรื่องการรับประทานอาหารให้เพียงพอ และออกกำลังกายแบบเพื่อเสริมสร้างกล้ามเนื้อ
+                สามารถช่วยเพิ่มค่า BMI ให้อยู่ในเกณฑ์ปกติได้</p>
+        </div>
+    </div>
+    <!-- Content 2 -->
+
+    <!-- footer -->
+    <div class="container">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#Home" class="nav-link px-2 text-body-secondary">หน้าหลัก</a></li>
+                <li class="nav-item"><a href="#CalBMI" class="nav-link px-2 text-body-secondary">คำนวณ BMI</a></li>
+                <li class="nav-item"><a href="#information" class="nav-link px-2 text-body-secondary">ตารางเทียบค่า BMI</a>
+                </li>
+            </ul>
+            <p class="text-center text-body-secondary">&copy; 2023 Nanthawat Wangpoomyai. All rights reserved.</p>
+        </footer>
+    </div>
+    <!-- footer -->
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
