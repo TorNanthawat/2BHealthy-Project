@@ -79,8 +79,6 @@ body {
     border-radius: 5px;
 }
 
-
-
 .nav-link {
     color: #ffffff;
 }
@@ -152,7 +150,13 @@ body {
         font-size: 13px;
     }
 
+    .p-footer {
+        font-size: 12px;
+    }
 
+    footer, li {
+        font-size: 14px;
+    }
 }
   
 /* สำหรับหน้าจอแท็บเล็ต */
